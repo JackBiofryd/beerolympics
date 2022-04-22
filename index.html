@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Beer Olympics</title>
+	</head>
+	<body>
+		<section id="home">
+			<nav class="navbar-wrapper">
+				<div class="container navbar">
+					<div class="logo">
+						<img class="logo" src="./media/logo.png" alt="Logo" />
+					</div>
+					<div class="nav-links">
+						<a class="link" href="#home">About</a>
+						<a class="link" href="#games">Games</a>
+						<a class="link" href="#contact">Contact</a>
+					</div>
+				</div>
+			</nav>
+
+			<div class="home-content">
+				<div class="showcase">
+					<div class="illustration-wrapper">
+						<img
+							class="showcase-illustration"
+							src="./media/illustration.png"
+							alt="Beer Olympics"
+						/>
+					</div>
+				</div>
+				<div class="middle-wave">
+					<img src="./media/wave.png" />
+				</div>
+				<div class="main-content">
+					<div class="content-wrapper">
+						<h1 class="XL-heading">
+							Start the
+							<span class="primary-color">summer</span> off with
+							<span class="primary-color">a bang!</span>
+						</h1>
+						<button class="btn">REGISTER</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="about">
+			<div class="text-wrapper">
+				<div class="top">
+					<img class="top-wave" src="./media/topWave.png" />
+					<h2 class="L-heading">
+						<span class="white">What is</span>
+						<span class="primary-color"
+							>Beer <br />
+							Olympics?</span
+						>
+					</h2>
+				</div>
+				<div class="about-text bottom">
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing
+						elit. Ducimus, enim doloremque laboriosam veritatis
+						harum esse debitis animi, sunt sed, molestiae officia.
+						Et ipsum aperiam quia asperiores, iusto eveniet quasi
+						vero?
+					</p>
+					<br />
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Non aut obcaecati quibusdam sunt! Reprehenderit nobis
+						libero modi quis eum nam inventore molestiae, beatae
+						tempora architecto! Exercitationem excepturi iste
+						aliquam quod?
+					</p>
+				</div>
+			</div>
+			<div class="image-gallery-wrapper">
+				<div class="image-gallery">
+					<div class="gallery-row">
+						<img
+							class="gallery-item"
+							src="./media/img1.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img2.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img3.png"
+							alt="Fun"
+						/>
+					</div>
+					<div class="gallery-row">
+						<img
+							class="gallery-item"
+							src="./media/img4.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img5.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img6.png"
+							alt="Fun"
+						/>
+					</div>
+					<div class="gallery-row">
+						<img
+							class="gallery-item"
+							src="./media/img7.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img8.png"
+							alt="Fun"
+						/>
+						<img
+							class="gallery-item"
+							src="./media/img9.png"
+							alt="Fun"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="game-container" id="game1">
+			<div class="container flex-reverse right">
+				<div class="game-info">
+					<h2 class="game-title XL-heading">
+						Beer <br /><span class="primary-color">Pong</span>
+					</h2>
+					<p class="game-desc">
+						The classic beer game to get the night started right!
+					</p>
+					<button class="btn">Learn More</button>
+				</div>
+				<div class="game-illustration">
+					<img
+						class="blob"
+						src="./media/pongBlob.png"
+						alt="Beer Pong"
+					/>
+					<img src="./media/beerPong.png" alt="Beer Pong" />
+				</div>
+			</div>
+		</section>
+
+		<section class="game-container" id="game2">
+			<div class="container">
+				<div class="game-info">
+					<h2 class="game-title XL-heading">
+						Fastest <br /><span class="primary-color">Jug</span>
+					</h2>
+					<p class="game-desc">
+						Let's find out which beer aficionado can chug beer the
+						fastest!
+					</p>
+					<button class="btn">Learn More</button>
+				</div>
+				<div class="game-illustration">
+					<img
+						class="blob"
+						src="./media/chugBlob.png"
+						alt="Fastest Chug"
+					/>
+					<img src="./media/fastestChug.png" alt="Fastest Chug" />
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="contact-wrapper">
+			<img src="./media/contactWave.png" class="contact-wave" />
+			<div class="container">
+				<h2 class="XL-heading">
+					Contact <span class="white">Us</span>
+				</h2>
+				<form action="contact.php" method="post" class="contact-form">
+					<div class="input-row">
+						<div class="input-container">
+							<label for="name" class="input-label">Name</label>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								class="input-field"
+								placeholder="Name..."
+							/>
+						</div>
+						<div class="input-container">
+							<label for="email" class="input-label"
+								>E-mail</label
+							>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								class="input-field"
+								placeholder="E-mail..."
+							/>
+						</div>
+					</div>
+					<div class="input-container">
+						<label for="message" class="input-label">Message</label>
+						<textarea
+							value=""
+							name="message"
+							id="message"
+							class="input-field"
+							cols="30"
+							rows="10"
+							placeholder="Message..."
+						></textarea>
+					</div>
+					<div class="input-container">
+						<button
+							class="btn btn-inverse btn-block"
+							type="submit"
+							name="submit"
+						>
+							Submit
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</body>
+</html>
