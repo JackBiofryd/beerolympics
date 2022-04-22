@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $body = "Name: ".$name."\n"."Email: ".$mailFrom."\n\n".$message."\n";
 
     mail($mailTo, $subject, $body, $headers);
-    header('Location: index.html');
+    header("Location: https://coruscating-souffle-5407a9.netlify.app/");
 }
 
 ?>

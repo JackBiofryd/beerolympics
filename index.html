@@ -18,6 +18,15 @@
 		<title>Beer Olympics</title>
 	</head>
 	<body>
+		<div class="modal" id="registerModal">
+			<div class="container">
+				<div class="modal-content">
+					<h1>This is a Modal!</h1>
+					<p>Welcome!</p>
+				</div>
+			</div>
+		</div>
+
 		<section id="home">
 			<nav class="navbar-wrapper">
 				<div class="container navbar">
@@ -196,7 +205,12 @@
 				<h2 class="XL-heading">
 					Contact <span class="white">Us</span>
 				</h2>
-				<form data-netlify="true" name="contact" class="contact-form">
+				<form
+					action="contact.php"
+					method="post"
+					name="contact"
+					class="contact-form"
+				>
 					<div class="input-row">
 						<div class="input-container">
 							<label for="name" class="input-label">Name</label>
