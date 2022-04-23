@@ -5,7 +5,7 @@
 	--primary: #fd0;
 	--dark-primary: #eacb00;
 	--fonts: 'Roboto', 'Arial', 'Helvetica';
-	--max-width: 1350px;
+	--max-width: 1250px;
 }
 
 /* Reset */
@@ -279,10 +279,13 @@ svg {
 #about .text-wrapper h2 {
 	max-width: 520px;
 }
+#about .text-wrapper p {
+	padding-left: 2rem;
+}
 #about .text-wrapper .L-heading {
 	position: absolute;
 	top: 7rem;
-	right: 10rem;
+	right: 8rem;
 }
 
 #about .top {
