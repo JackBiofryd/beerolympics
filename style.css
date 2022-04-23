@@ -18,6 +18,10 @@
 }
 
 /* Element Styling */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: var(--white);
 	color: var(--black);
@@ -46,6 +50,8 @@ svg {
 
 .logo {
 	width: 50px;
+
+	transition: 0.3s all ease;
 }
 
 .primary-color {
@@ -103,13 +109,19 @@ svg {
 	text-align: right;
 }
 
+.frozen {
+	overflow: hidden;
+}
+
 /* Special Styling */
 .navbar-wrapper {
 	width: 100%;
-	margin-top: 2rem;
+	padding-top: 2rem;
 	position: fixed;
 	top: 0;
 	z-index: 99999;
+
+	transition: 0.3s all ease;
 }
 
 .navbar {
@@ -130,6 +142,8 @@ svg {
 	margin: 0rem 1rem;
 	font-size: 1.15rem;
 	position: relative;
+
+	transition: 0.3s all ease;
 }
 
 .navbar .nav-links .link::after {
@@ -146,6 +160,21 @@ svg {
 
 .navbar .nav-links .link:hover::after {
 	width: 50%;
+}
+
+.navbar-wrapper.scrolled-nav {
+	background: var(--white);
+	margin-top: 0;
+	padding: 0.75rem 0;
+	box-shadow: rgba(100, 100, 111, 0.1) 0px 3px 20px 0px;
+}
+
+.navbar-wrapper.scrolled-nav .navbar .nav-links .link {
+	font-size: 1rem;
+}
+
+.navbar-wrapper.scrolled-nav .logo {
+	width: 40px;
 }
 
 .home-content {
@@ -390,4 +419,44 @@ textarea.input-field {
 
 .input-container .btn {
 	margin-top: 1rem;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	min-width: 100vw;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999999;
+	opacity: 0;
+	transform: scale(0);
+}
+.modal .modal-wrapper {
+	transform: scale(0);
+	transition: 0.4s transform ease;
+}
+
+.modal.show-modal {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.modal.show-modal .modal-wrapper {
+	transform: scale(1);
+}
+
+.modal .modal-wrapper {
+	background: white;
+	width: 70%;
+	min-height: 70%;
+	border-radius: 1.5rem;
+	padding: 2rem;
+	text-align: center;
 }
