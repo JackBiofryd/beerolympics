@@ -8,6 +8,9 @@ function showModal(modalId) {
 }
 
 document.querySelector('.modal').onclick = e => hideModal(e);
+window.addEventListener('scroll', toggleFixedNavbar);
+window.addEventListener('click', handleWindowClick);
+document.querySelector('.menu-icon').onclick = toggleHamburgerMenu;
 
 function hideModal(e) {
 	if (e.target.classList.contains('modal')) {
@@ -16,9 +19,7 @@ function hideModal(e) {
 	}
 }
 
-window.addEventListener('scroll', e => toggleFixedNavbar(e));
-
-function toggleFixedNavbar(e) {
+function toggleFixedNavbar() {
 	const scrollTop =
 		window.pageYOffset ||
 		(document.documentElement || document.body.parentNode || document.body)
@@ -31,4 +32,14 @@ function toggleFixedNavbar(e) {
 	}
 
 	return navbarEl.classList.add('scrolled-nav');
+}
+
+function handleWindowClick(e) {
+	if (e.target.classList.contains('menu-icon')) return;
+
+	document.querySelector('.hamburger-menu-links').classList.add('hidden');
+}
+
+function toggleHamburgerMenu() {
+	document.querySelector('.hamburger-menu-links').classList.toggle('hidden');
 }
