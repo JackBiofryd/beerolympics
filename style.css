@@ -310,7 +310,7 @@ svg {
 	flex-grow: 1;
 	justify-content: center;
 	flex-direction: column;
-	margin: 0 1rem 2rem 1rem;
+	margin: 0 1.75rem 2rem 1.75rem;
 }
 
 #about .image-gallery-wrapper {
@@ -399,6 +399,22 @@ svg {
 	left: 0;
 	width: 100%;
 	max-height: 15rem;
+}
+
+.contact-info {
+	margin: 6rem 0;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-info .contact-info-item {
+	flex: 1;
+}
+
+.contact-info-item i {
+	margin-bottom: 1.5rem;
 }
 
 .contact-form {
@@ -622,6 +638,13 @@ textarea.input-field {
 
 	#game1 .game-info {
 		margin: 0 1rem;
+	}
+
+	.contact-info {
+		flex-direction: column;
+	}
+	.contact-info-item {
+		margin: 2rem 1rem;
 	}
 
 	.contact-form .input-row {
