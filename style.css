@@ -511,7 +511,7 @@ textarea.input-field {
 	}
 }
 
-@media (max-width: 900px), (max-aspect-ratio: 1.22/1) {
+@media (max-width: 913px) {
 	#about {
 		flex-direction: column;
 	}
@@ -737,6 +737,11 @@ textarea.input-field {
 
 	.game-desc {
 		padding: 0 2rem;
+	}
+
+	.modal .modal-wrapper {
+		min-height: 90%;
+		width: 95%;
 	}
 }
 
