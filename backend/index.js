@@ -2,6 +2,9 @@ const express = require('express');
 
 const app = express();
 
+const bPongTeams = [];
+const fChugContestants = [];
+
 app.get('/', (req, res) => {
 	res.send('Hello World');
 });

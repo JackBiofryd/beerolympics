@@ -26,17 +26,17 @@
 		<title>Beer Olympics</title>
 	</head>
 	<body>
-		<div class="modal" id="registerModal">
-			<div class="exit"></div>
-			<div class="modal-wrapper">
-				<div class="modal-content">
-					<h1>This is a Modal!</h1>
-					<p>Welcome!</p>
-				</div>
-			</div>
-		</div>
 
 		<section id="home">
+			<div class="modal" id="registerModal">
+				<div class="exit"></div>
+				<div class="modal-wrapper">
+					<div class="modal-content">
+						<h1>This is a Modal!</h1>
+						<p>Welcome!</p>
+					</div>
+				</div>
+			</div>
 			<nav class="navbar-wrapper">
 				<div class="container navbar">
 					<div class="logo">
@@ -79,6 +79,7 @@
 							REGISTER
 						</button>
 					</div>
+					
 				</div>
 				<div class="middle-wave">
 					<img class="wave-large" src="./media/wave.png" />
@@ -193,7 +194,9 @@
 					<p class="game-desc">
 						The classic beer game to get the night started right!
 					</p>
-					<button class="btn">Learn More</button>
+					<button class="btn" onclick="showModal('pongModal')">
+						Learn More
+					</button>
 				</div>
 				<div class="game-illustration">
 					<img
@@ -202,6 +205,58 @@
 						alt="Beer Pong"
 					/>
 					<img src="./media/beerPong.png" alt="Beer Pong" />
+				</div>
+			</div>
+			<div class="modal" id="pongModal">
+				<div class="exit"></div>
+				<div class="modal-wrapper">
+					<div class="modal-content">
+						<div class="modal-illustration">
+							<img src="./media/modalWave.png" alt="Wave" />
+						</div>
+						<div class="modal-text">
+							<h2 class="M-heading mb-4">
+								Any Hole is Our Goal!
+							</h2>
+							<div class="left">
+								<p class="main-p">
+									Here are the rules for Beer Pong:
+								</p>
+								<p>1. The Cup Formation is 3-2-1 (6 cups).</p>
+								<p>
+									2. During offense, the player can choose
+									between the standard shot and the bounce
+									shot.
+								</p>
+								<p>
+									3. Both players from one team are given a
+									ping pong ball to shoot and may do so
+									simultaneously.
+								</p>
+								<p>
+									4. Both players from the current team must
+									have taken a shot before the other team can
+									shoot.
+								</p>
+								<p>5. The standard shot is worth 1 cup</p>
+								<p>6. The bounce shot is worth 2 cups</p>
+								<p>
+									7. If both members hit the same cup it's
+									worth 3 cups.
+								</p>
+								<p>
+									8. If both members hit the same cup with a
+									bounce shot it's worth 4 cups.
+								</p>
+								<p>9. The bounce shot can be blocked.</p>
+								<p>
+									10. Illegal blocks give the opposite team
+									another shot.
+								</p>
+							</div>
+							<h2 class="M-heading mt-3">Have Fun!</h2>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -216,7 +271,7 @@
 						Let's find out which beer aficionado can chug beer the
 						fastest!
 					</p>
-					<button class="btn">Learn More</button>
+					<button class="btn" onclick="showModal('chugModal')">Learn More</button>
 				</div>
 				<div class="game-illustration">
 					<img
@@ -227,6 +282,19 @@
 					<img src="./media/fastestChug.png" alt="Fastest Chug" />
 				</div>
 			</div>
+			<div class="modal" id="chugModal">
+				<div class="exit"></div>
+				<div class="modal-wrapper">
+					<div class="modal-content">
+						<div class="modal-illustration">
+							<img src="./media/modalWave.png" alt="Wave" />
+						</div>
+						<div class="modal-text">
+							<h2 class="M-heading mb-4">
+								The player who can chug a cup of beer the fastest wins!
+							</h2>
+						</div>
+					</div>
 		</section>
 
 		<section class="contact-wrapper">

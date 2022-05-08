@@ -61,6 +61,10 @@ svg {
 	color: var(--white);
 }
 
+.left {
+	text-align: left;
+}
+
 .XL-heading {
 	font-size: 5.5rem;
 	font-weight: 500;
@@ -68,6 +72,18 @@ svg {
 .L-heading {
 	font-size: 3.3rem;
 	font-weight: 500;
+}
+.M-heading {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.mt-3 {
+	margin-top: 3rem;
+}
+
+.mb-4 {
+	margin-bottom: 4rem;
 }
 
 .btn {
@@ -469,10 +485,10 @@ textarea.input-field {
 	overflow-x: hidden;
 	width: 100%;
 	min-width: 100vw;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.6);
 	padding: 2rem;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 	z-index: 999999;
 	opacity: 0;
@@ -493,12 +509,48 @@ textarea.input-field {
 }
 
 .modal .modal-wrapper {
-	background: white;
-	width: 70%;
-	min-height: 70%;
+	background: var(--white);
+	width: 90%;
+	max-width: 500px;
+	min-height: 98%;
 	border-radius: 1.5rem;
-	padding: 2rem;
 	text-align: center;
+	overflow: hidden;
+}
+
+.modal .modal-illustration {
+	height: 330px;
+	position: relative;
+}
+
+.modal .modal-illustration img {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.modal .modal-text {
+	padding: 2.5rem;
+	padding-top: 0.5rem;
+}
+
+.modal .modal-text p {
+	margin: 0.25rem;
+}
+
+.modal .modal-text p.main-p {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+
+#pongModal .modal-illustration {
+	background: url('./media/beerPongModal.jpg') no-repeat center center/cover;
+}
+
+#chugModal .modal-illustration {
+	background: url('./media/chugModal.jpg') no-repeat center center/cover;
 }
 
 @media screen and (max-width: 1250px) {

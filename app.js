@@ -7,7 +7,8 @@ function showModal(modalId) {
 	document.querySelector('body').classList.add('frozen');
 }
 
-document.querySelector('.modal').onclick = e => hideModal(e);
+const modals = document.querySelectorAll('.modal');
+modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
 window.addEventListener('click', handleWindowClick);
 document.querySelector('.menu-icon').onclick = toggleHamburgerMenu;
