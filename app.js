@@ -1,12 +1,3 @@
-function showModal(modalId) {
-	const modalEl = document.getElementById(modalId);
-
-	if (!modalEl) return;
-
-	modalEl.classList.add('show-modal');
-	document.querySelector('body').classList.add('frozen');
-}
-
 const modals = document.querySelectorAll('.modal');
 modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
@@ -43,4 +34,20 @@ function handleWindowClick(e) {
 
 function toggleHamburgerMenu() {
 	document.querySelector('.hamburger-menu-links').classList.toggle('hidden');
+}
+
+function showModal(modalId) {
+	const modalEl = document.getElementById(modalId);
+
+	if (!modalEl) return;
+
+	modalEl.classList.add('show-modal');
+	document.querySelector('body').classList.add('frozen');
+}
+
+function toggleBeerPongRegister() {
+	const checkbox = document.getElementById('pongCheck');
+	const bpRegister = document.querySelector('.beer-pong-register');
+
+	bpRegister.style.display = checkbox.checked ? 'block' : 'none';
 }

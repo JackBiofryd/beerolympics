@@ -112,6 +112,11 @@ svg {
 	background: #dadada;
 }
 
+.btn-blwhite {
+	background: #000;
+	color: #fafafa;
+}
+
 .btn-block {
 	display: block;
 	width: 100%;
@@ -543,6 +548,31 @@ textarea.input-field {
 	font-size: 1.2rem;
 	font-weight: 500;
 	margin-bottom: 1rem;
+}
+
+.modal .modal-content {
+	padding: 2rem;
+	margin-top: 1.2rem;
+}
+
+.modal .modal-content .register-form {
+	margin-top: 4rem;
+}
+
+.modal-content .form-heading {
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+
+.modal .beer-pong-register {
+	display: none;
+}
+
+.input-container .checkbox {
+	display: block;
+	margin-left: 1rem;
+	margin-top: 1rem;
+	font-size: 1.1rem;
 }
 
 #pongModal .modal-illustration {

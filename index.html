@@ -32,8 +32,62 @@
 				<div class="exit"></div>
 				<div class="modal-wrapper">
 					<div class="modal-content">
-						<h1>This is a Modal!</h1>
-						<p>Welcome!</p>
+						<h2 class="form-heading">Register <br/>
+						<span class="primary-color">Your</span> <br />
+						Team <br /></h2>
+						<form action="#" class="register-form">
+							<div class="input-container">
+								<label for="name" class="input-label">Your Name</label>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									class="input-field"
+									placeholder="Enter your real name..."
+									required
+								/>
+							</div>
+							<div class="input-container">
+								<label for="games" class="input-label">Choose 1 or more games</label>
+								<div class="checkbox">
+									<input type="checkbox" value="chug" id="chugCheck"> &nbsp Fastest Chug
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" value="pong" id="pongCheck" onclick="toggleBeerPongRegister()"> &nbsp Beer Pong
+								</div>
+							</div>
+							<div class="beer-pong-register">
+								<div class="input-container">
+								<label for="name" class="input-label">Teammate</label>
+								<input
+										type="text"
+										name="name"
+										id="name"
+										class="input-field"
+										placeholder="Beer pong teammates name..."
+									/>
+								</div>
+								<div class="input-container">
+									<label for="name" class="input-label">Team Name</label>
+									<input
+										type="text"
+										name="name"
+										id="name"
+										class="input-field"
+										placeholder="Beer pong teams name..."
+									/>
+								</div>
+							</div>
+							<div class="input-container">
+								<button
+									class="btn btn-blwhite btn-block"
+									type="submit"
+									name="submit"
+								>
+									Submit
+								</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
