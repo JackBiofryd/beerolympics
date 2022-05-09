@@ -3,6 +3,9 @@ modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
 window.addEventListener('click', handleWindowClick);
 document.querySelector('.menu-icon').onclick = toggleHamburgerMenu;
+document
+	.querySelector('.register-form')
+	.addEventListener('submit', handleFormSubmit);
 
 function hideModal(e) {
 	if (e.target.classList.contains('modal')) {
@@ -50,4 +53,52 @@ function toggleBeerPongRegister() {
 	const bpRegister = document.querySelector('.beer-pong-register');
 
 	bpRegister.style.display = checkbox.checked ? 'block' : 'none';
+}
+
+function handleFormSubmit(e) {
+	// TODO
+	e.preventDefault();
+
+	const formData = getFormData();
+	if (!formData) return;
+
+	console.log(formData);
+}
+
+function getFormData() {
+	const name = document.getElementById('name').value;
+	const isFastestChugChecked = document.getElementById('chugSelect').checked;
+	const isBeerPongChecked = document.getElementById('pongSelect').checked;
+
+	if (!name) return sendErrorMessage('Please input your name.');
+
+	if (!isBeerPongChecked && !isFastestChugChecked)
+		return sendErrorMessage('Please select a game.');
+
+	if (!isBeerPongChecked)
+		return {
+			name,
+			chug: true,
+			pong: false
+		};
+
+	const pongTeammate = document.getElementById('teammate').value;
+	const pongTeam = document.getElementById('team').value;
+
+	if (!pongTeammate)
+		return sendErrorMessage("Please input your teammate's name.");
+	if (!pongTeam) return sendErrorMessage("Please input your team's name.");
+
+	return {
+		name,
+		chug: false,
+		pong: true,
+		teammate: pongTeammate,
+		team: pongTeam
+	};
+}
+
+function sendErrorMessage(message) {
+	document.querySelector('small').textContent = message;
+	return false;
 }
