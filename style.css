@@ -334,6 +334,19 @@ svg {
 	margin: 0 1.75rem 2rem 1.75rem;
 }
 
+#about .about-text {
+	position: relative;
+}
+
+#about .about-text .about-blob {
+	position: absolute;
+	top: 58%;
+	left: 47%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	width: 125%;
+}
+
 #about .image-gallery-wrapper {
 	display: flex;
 	align-items: center;
@@ -344,6 +357,17 @@ svg {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-left: 5rem;
+	position: relative;
+}
+
+#about .image-gallery .gallery-border {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: calc(100% - 4rem);
 }
 
 #about .gallery-row {
@@ -568,7 +592,7 @@ textarea.input-field {
 	display: none;
 }
 
-.input-container .checkbox {
+.input-container .radio-container {
 	display: block;
 	margin-left: 1rem;
 	margin-top: 1rem;

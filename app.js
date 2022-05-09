@@ -46,7 +46,8 @@ function showModal(modalId) {
 }
 
 function toggleBeerPongRegister() {
-	const checkbox = document.getElementById('pongCheck');
+	const checkbox = document.getElementById('pongSelect');
+	console.log(checkbox);
 	const bpRegister = document.querySelector('.beer-pong-register');
 
 	bpRegister.style.display = checkbox.checked ? 'block' : 'none';

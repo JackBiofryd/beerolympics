@@ -48,12 +48,12 @@
 								/>
 							</div>
 							<div class="input-container">
-								<label for="games" class="input-label">Choose 1 or more games</label>
-								<div class="checkbox">
-									<input type="checkbox" value="chug" id="chugCheck"> &nbsp Fastest Chug
+								<label for="games" class="input-label">Choose a game</label>
+								<div class="radio-container">
+									<input type="radio" name="radio" id="chugSelect" value="chug" onclick="toggleBeerPongRegister()"> Fastest Chug
 								</div>
-								<div class="checkbox">
-									<input type="checkbox" value="pong" id="pongCheck" onclick="toggleBeerPongRegister()"> &nbsp Beer Pong
+								<div class="radio-container">
+									<input type="radio" name="radio" id="pongSelect" value="pong" onclick="toggleBeerPongRegister()"> Beer Pong
 								</div>
 							</div>
 							<div class="beer-pong-register">
@@ -165,8 +165,9 @@
 					</h2>
 				</div>
 				<div class="about-text bottom">
+					<img src="./media/aboutBlob.png"class="about-blob">
 					<p>
-						Hello everyone! This is the official page of Beer
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Hello everyone! This is the official page of Beer
 						Olympics. This year you will have the opportunity to
 						attend the second annual Beer Olympics. Our main goal is
 						to get people together, listen to good music, party hard
@@ -174,7 +175,7 @@
 					</p>
 					<br />
 					<p>
-						The first annual Beer Olympics was an extreme success
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp The first annual Beer Olympics was an extreme success
 						where people had more fun than ever. We hope we can do
 						it again this year by making this a special night for
 						everyone. Win many awards as well as someone's heart.
@@ -184,6 +185,7 @@
 			</div>
 			<div class="image-gallery-wrapper">
 				<div class="image-gallery">
+					<img src="./media/test.png" class="gallery-border">
 					<div class="gallery-row">
 						<img
 							class="gallery-item"
