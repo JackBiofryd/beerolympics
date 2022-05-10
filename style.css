@@ -607,6 +607,11 @@ textarea.input-field {
 	background: url('./media/chugModal.jpg') no-repeat center center/cover;
 }
 
+.message-container {
+	margin: 1.5rem 0;
+	font-size: 1.25rem;
+}
+
 @media screen and (max-width: 1250px) {
 	#about .text-wrapper .L-heading {
 		position: absolute;

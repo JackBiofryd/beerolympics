@@ -1,14 +1,151 @@
 const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const Contestant = require('./schemas/contestantSchema');
+const Team = require('./schemas/teamSchema');
 
+// Init app
 const app = express();
 
-const bPongTeams = [];
-const fChugContestants = [];
+// Middleware
+app.use(express.json());
+app.use(cors());
 
+// Database
+const mongoURI =
+	'mongodb://beerolympics:olympics6969@cluster0-shard-00-00.tn6rr.mongodb.net:27017,cluster0-shard-00-01.tn6rr.mongodb.net:27017,cluster0-shard-00-02.tn6rr.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-i16p0q-shard-0&authSource=admin&retryWrites=true&w=majority';
+mongoose.connect(
+	mongoURI,
+	() => console.log('connected'),
+	e => console.log(e)
+);
+
+const maxChugContestants = 10;
+const maxPongTeams = 32;
+const fChugContestants = [];
+const bPongTeams = [];
+
+// Routes
 app.get('/', (req, res) => {
-	res.send('Hello World');
+	res.json({
+		chugSpacesLeft: maxChugContestants - fChugContestants.length,
+		pongSpacesLeft: maxPongTeams - bPongTeams.length
+	});
 });
 
+app.post('/', async (req, res) => {
+	if (!req.body || !req.body.name || !(req.body.chug ^ req.body.pong))
+		return res.json({
+			code: 422,
+			msg: 'Please input all fields.',
+			success: false
+		});
+
+	const isRegisteringForFastestChug = req.body.chug;
+	const contestantName = req.body.name;
+
+	if (isRegisteringForFastestChug) {
+		const contestants = await Contestant.find();
+
+		if (
+			contestants.find(contestant => contestant.name === contestantName)
+		) {
+			return res.json({
+				code: 422,
+				msg: 'You are already registered for Fastest Chug.',
+				success: false
+			});
+		}
+
+		if (contestants.length >= maxChugContestants) {
+			return res.json({
+				code: 400,
+				msg: 'No more spaces left for Fastest Chug. Sorry!',
+				success: false
+			});
+		}
+
+		try {
+			await Contestant.create({
+				name: contestantName
+			});
+		} catch (err) {
+			res.json({
+				code: 500,
+				msg: 'Error with database. Please try again later.',
+				success: false
+			});
+		}
+
+		return res.json({
+			code: 200,
+			msg: `${contestantName} has been registered for Fastest Chug!`,
+			success: true
+		});
+	}
+
+	const isRegisteringForBeerPong = req.body.pong;
+	if (isRegisteringForBeerPong) {
+		const allTeams = await Team.find();
+
+		if (!req.body.teammate || !req.body.team)
+			return res.json({
+				code: 422,
+				msg: 'Please input all fields.',
+				success: false
+			});
+
+		const { teammate, team } = req.body;
+
+		let contestantIsAlreadyRegistered = false;
+		allTeams.forEach(team => {
+			const { members } = team;
+
+			if (
+				members.includes(contestantName) ||
+				members.includes(teammate)
+			) {
+				contestantIsAlreadyRegistered = true;
+			}
+		});
+
+		if (contestantIsAlreadyRegistered)
+			return res.json({
+				code: 422,
+				msg: 'Someone from your team is already registered for Beer Pong.',
+				success: false
+			});
+
+		if (allTeams.length >= maxPongTeams) {
+			return res.json({
+				code: 400,
+				msg: 'No more spaces left for Beer Pong. Sorry!',
+				success: false
+			});
+		}
+
+		try {
+			await Team.create({
+				members: [contestantName, teammate],
+				name: team
+			});
+		} catch (err) {
+			res.json({
+				code: 500,
+				msg: 'Error with database. Please try again later.',
+				success: false
+			});
+		}
+
+		res.json({
+			code: 200,
+			msg: 'You have been registered for Beer Pong!',
+			success: true
+		});
+	}
+});
+
+// Starting server
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
 	console.log(`Server started on port: ${port}`);

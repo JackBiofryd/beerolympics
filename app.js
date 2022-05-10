@@ -1,3 +1,5 @@
+const BACKEND_URL = 'http://127.0.0.1:5000';
+
 const modals = document.querySelectorAll('.modal');
 modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
@@ -62,7 +64,8 @@ function handleFormSubmit(e) {
 	const formData = getFormData();
 	if (!formData) return;
 
-	console.log(formData);
+	document.querySelector('.btn-blwhite').textContent = 'Loading...';
+	postData(BACKEND_URL, formData);
 }
 
 function getFormData() {
@@ -99,6 +102,35 @@ function getFormData() {
 }
 
 function sendErrorMessage(message) {
-	document.querySelector('small').textContent = message;
+	const small = document.querySelector('small');
+	small.textContent = message;
+	small.style.color = '#ff0000';
 	return false;
+}
+function sendSuccessMessage(message) {
+	const small = document.querySelector('small');
+	small.textContent = message;
+	small.style.color = '#86DC3D';
+}
+
+async function postData(url, data) {
+	const response = await fetch(url, {
+		method: 'POST',
+		mode: 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	});
+
+	const responseJSON = await response.json();
+	handleResponseJSON(responseJSON);
+}
+
+function handleResponseJSON(data) {
+	document.querySelector('.btn-blwhite').textContent = 'Submit';
+	if (!data.success) return sendErrorMessage(data.msg);
+
+	sendSuccessMessage(data.msg);
+	document.querySelector('.register-form').reset();
 }
