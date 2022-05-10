@@ -687,6 +687,10 @@ textarea.input-field {
 		margin-bottom: 15rem;
 	}
 
+	.about-blob {
+		display: none;
+	}
+
 	.home-content {
 		flex-direction: column;
 		height: auto;
