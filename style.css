@@ -574,7 +574,7 @@ textarea.input-field {
 	margin-bottom: 1rem;
 }
 
-.modal .modal-content {
+#registerModal .modal-content {
 	padding: 2rem;
 	margin-top: 1.2rem;
 }
