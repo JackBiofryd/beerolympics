@@ -123,8 +123,8 @@ app.post('/', async (req, res) => {
 
 			members.forEach(member => {
 				if (
-					member.toLowerCase() === teammate ||
-					member.toLowerCase() === contestantName
+					member.toLowerCase() === teammate.toLowerCase() ||
+					member.toLowerCase() === contestantName.toLowerCase()
 				)
 					contestantIsAlreadyRegistered = true;
 			});

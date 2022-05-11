@@ -710,6 +710,10 @@ footer a {
 		display: none;
 	}
 
+	#about .image-gallery-wrapper .image-gallery {
+		transform: scale(1);
+	}
+
 	.home-content {
 		flex-direction: column;
 		height: auto;
