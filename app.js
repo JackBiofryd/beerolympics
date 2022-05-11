@@ -1,5 +1,4 @@
-const BACKEND_URL = 'http://127.0.0.1:5000';
-// https://beerolympicss.herokuapp.com/
+const BACKEND_URL = 'https://beerolympicss.herokuapp.com/';
 const modals = document.querySelectorAll('.modal');
 modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
