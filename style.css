@@ -91,6 +91,7 @@ svg {
 	background: none;
 	border: none;
 	background: var(--primary);
+	color: var(--black);
 	font-family: var(--fonts);
 	padding: 1.2rem 2.5rem;
 	font-size: 1.3rem;
@@ -341,10 +342,10 @@ svg {
 #about .about-text .about-blob {
 	position: absolute;
 	top: 58%;
-	left: 47%;
+	left: 49%;
 	transform: translate(-50%, -50%);
 	z-index: -1;
-	width: 125%;
+	width: 135%;
 }
 
 #about .image-gallery-wrapper {
@@ -354,6 +355,7 @@ svg {
 }
 #about .image-gallery-wrapper .image-gallery {
 	display: flex;
+	transform: scale(1.1);
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -612,6 +614,19 @@ textarea.input-field {
 	font-size: 1.25rem;
 }
 
+footer {
+	padding: 1.5rem 1rem;
+	font-size: 1.3rem;
+	text-align: center;
+	background: var(--black);
+	color: var(--white);
+}
+
+footer a {
+	color: var(--white);
+	text-decoration: underline;
+}
+
 @media screen and (max-width: 1250px) {
 	#about .text-wrapper .L-heading {
 		position: absolute;
@@ -685,6 +700,10 @@ textarea.input-field {
 
 	#about {
 		margin-bottom: 15rem;
+	}
+
+	#about .image-gallery-wrapper .image-gallery {
+		margin-left: 0;
 	}
 
 	.about-blob {

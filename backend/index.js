@@ -48,7 +48,11 @@ app.post('/', async (req, res) => {
 		const contestants = await Contestant.find();
 
 		if (
-			contestants.find(contestant => contestant.name === contestantName)
+			contestants.find(
+				contestant =>
+					contestant.name.toLowerCase() ===
+					contestantName.toLowerCase()
+			)
 		) {
 			return res.json({
 				code: 422,
@@ -97,16 +101,33 @@ app.post('/', async (req, res) => {
 
 		const { teammate, team } = req.body;
 
-		let contestantIsAlreadyRegistered = false;
-		allTeams.forEach(team => {
-			const { members } = team;
+		if (teammate.toLowerCase() === contestantName.toLowerCase()) {
+			return res.json({
+				code: 422,
+				msg: 'Members of the teams cannot be the same person.',
+				success: false
+			});
+		}
 
-			if (
-				members.includes(contestantName) ||
-				members.includes(teammate)
-			) {
-				contestantIsAlreadyRegistered = true;
+		let contestantIsAlreadyRegistered = false;
+		allTeams.forEach(pongTeam => {
+			const { members } = pongTeam;
+
+			if (pongTeam.name.toLowerCase() === team.toLowerCase()) {
+				return res.json({
+					code: 422,
+					msg: 'Team name is already taken.',
+					success: false
+				});
 			}
+
+			members.forEach(member => {
+				if (
+					member.toLowerCase() === teammate ||
+					member.toLowerCase() === contestantName
+				)
+					contestantIsAlreadyRegistered = true;
+			});
 		});
 
 		if (contestantIsAlreadyRegistered)
