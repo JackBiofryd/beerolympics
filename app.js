@@ -7,6 +7,7 @@ document.querySelector('.menu-icon').onclick = toggleHamburgerMenu;
 document
 	.querySelector('.register-form')
 	.addEventListener('submit', handleFormSubmit);
+window.addEventListener('DOMContentLoaded', getRegisterInfo);
 
 function hideModal(e) {
 	if (e.target.classList.contains('modal')) {
@@ -137,4 +138,19 @@ function handleResponseJSON(data) {
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
 	document.querySelector('.beer-pong-register').style.display = 'none';
+}
+
+async function getRegisterInfo() {
+	const response = await fetch(BACKEND_URL);
+
+	const data = await response.json();
+
+	if (!data || !data.chugSpacesLeft || !data.pongSpacesLeft) return;
+
+	document.getElementById(
+		'chugText'
+	).textContent += `(${data.chugSpacesLeft} spaces left)`;
+	document.getElementById(
+		'pongText'
+	).textContent += `(${data.pongSpacesLeft} spaces left)`;
 }

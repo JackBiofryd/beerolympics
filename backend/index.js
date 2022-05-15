@@ -32,14 +32,15 @@ const transporter = nodemailer.createTransport({
 
 const maxChugContestants = 10;
 const maxPongTeams = 32;
-const fChugContestants = [];
-const bPongTeams = [];
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+	const registeredContestants = await Contestant.find();
+	const registeredTeams = await Team.find();
+
 	res.json({
-		chugSpacesLeft: maxChugContestants - fChugContestants.length,
-		pongSpacesLeft: maxPongTeams - bPongTeams.length
+		chugSpacesLeft: maxChugContestants - registeredContestants.length,
+		pongSpacesLeft: maxPongTeams - registeredTeams.length
 	});
 });
 
