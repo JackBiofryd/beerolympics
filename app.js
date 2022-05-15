@@ -128,9 +128,12 @@ async function postData(url, data) {
 }
 
 function handleResponseJSON(data) {
-	document.querySelector('.btn-blwhite').textContent = 'Submit';
 	if (!data.success) return sendErrorMessage(data.msg);
 
+	document.querySelector('.btn-blwhite').textContent = 'Registered!';
+	setTimeout(() => {
+		document.querySelector('.btn-blwhite').textContent = 'Submit';
+	}, 4000);
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
 	document.querySelector('.beer-pong-register').style.display = 'none';
