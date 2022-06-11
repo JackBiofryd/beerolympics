@@ -26,12 +26,12 @@ const transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 		user: 'beerolympwebsite@gmail.com',
-		pass: 'beertime69'
+		pass: 'pnulxadatcvhvhpd'
 	}
 });
 
 const maxChugContestants = 10;
-const maxPongTeams = 32;
+const maxPongTeams = 24;
 
 // Routes
 app.get('/', async (req, res) => {
