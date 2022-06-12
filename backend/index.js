@@ -31,7 +31,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const maxChugContestants = 10;
-const maxPongTeams = 24;
+const maxPongTeams = 32;
 
 // Routes
 app.get('/', async (req, res) => {

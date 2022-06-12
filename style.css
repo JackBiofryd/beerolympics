@@ -631,6 +631,15 @@ footer a {
 	text-decoration: underline;
 }
 
+.modal-content.finished p {
+	max-width: 100%;
+	font-size: 1.2rem;
+}
+
+.sold-out {
+	max-width: 90%;
+}
+
 @media screen and (max-width: 1250px) {
 	#about .text-wrapper .L-heading {
 		position: absolute;
