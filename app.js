@@ -145,7 +145,7 @@ async function getRegisterInfo() {
 
 	const data = await response.json();
 
-	if (!data || !data.chugSpacesLeft || !data.pongSpacesLeft) return;
+	if (!data) return;
 
 	document.getElementById(
 		'chugText'
