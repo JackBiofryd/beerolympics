@@ -14,7 +14,7 @@ app.use(cors());
 
 // Database
 const mongoURI =
-	'mongodb://beerolympics:olympics6969@cluster0-shard-00-00.tn6rr.mongodb.net:27017,cluster0-shard-00-01.tn6rr.mongodb.net:27017,cluster0-shard-00-02.tn6rr.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-i16p0q-shard-0&authSource=admin&retryWrites=true&w=majority';
+	'mongodb://jackbiofryd:eBKOKZgP9oX7I6uT@ac-hxl5ehb-shard-00-00.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-01.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-02.x6qewte.mongodb.net:27017/?ssl=true&replicaSet=atlas-rhwybx-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(
 	mongoURI,
 	() => console.log('connected'),
