@@ -7,7 +7,10 @@ document.querySelector('.menu-icon').onclick = toggleHamburgerMenu;
 document
 	.querySelector('.register-form')
 	.addEventListener('submit', handleFormSubmit);
-window.addEventListener('DOMContentLoaded', getRegisterInfo);
+window.addEventListener('DOMContentLoaded', () => {
+	initTagCloud();
+	getRegisterInfo();
+});
 
 function hideModal(e) {
 	if (e.target.classList.contains('modal')) {
@@ -138,6 +141,23 @@ function handleResponseJSON(data) {
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
 	document.querySelector('.beer-pong-register').style.display = 'none';
+}
+
+function initTagCloud() {
+	TagCanvas.Start('canvas', 'tags-list', {
+		outlineColour: '#fafafa00',
+		depth: 0.7,
+		maxSpeed: 0.03,
+		imageMode: 'image',
+		imageScale: 0.45,
+		minBrightness: 0.5,
+		noMouse: true,
+		noSelect: true,
+		zoom: 1,
+		maxZoom: 1,
+		minZoom: 1
+	});
+	TagCanvas.SetSpeed('canvas', [-0.15, 0.1]);
 }
 
 async function getRegisterInfo() {

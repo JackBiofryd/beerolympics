@@ -14,7 +14,7 @@ app.use(cors());
 
 // Database
 const mongoURI =
-	'mongodb://jackbiofryd:eBKOKZgP9oX7I6uT@ac-hxl5ehb-shard-00-00.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-01.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-02.x6qewte.mongodb.net:27017/?ssl=true&replicaSet=atlas-rhwybx-shard-0&authSource=admin&retryWrites=true&w=majority';
+	'mongodb://jackbiofryd:eBKOKZgP9oX7I6uT@ac-hxl5ehb-shard-00-00.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-01.x6qewte.mongodb.net:27017,ac-hxl5ehb-shard-00-02.x6qewte.mongodb.net:27017/?tlsInsecure=true&tlsAllowInvalidCertificates=true&ssl=true&replicaSet=atlas-rhwybx-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(
 	mongoURI,
 	() => console.log('connected'),
@@ -22,13 +22,13 @@ mongoose.connect(
 );
 
 // Nodemailer
-const transporter = nodemailer.createTransport({
-	service: 'gmail',
-	auth: {
-		user: 'beerolympwebsite@gmail.com',
-		pass: 'pnulxadatcvhvhpd'
-	}
-});
+// const transporter = nodemailer.createTransport({
+// 	service: 'gmail',
+// 	auth: {
+// 		user: 'beerolympwebsite@gmail.com',
+// 		pass: 'pnulxadatcvhvhpd'
+// 	}
+// });
 
 const maxChugContestants = 10;
 const maxPongTeams = 32;
@@ -99,7 +99,7 @@ app.post('/', async (req, res) => {
 			text: `Name: ${contestantName}`
 		};
 
-		transporter.sendMail(message);
+		// transporter.sendMail(message);
 
 		return res.json({
 			code: 200,
@@ -185,7 +185,7 @@ app.post('/', async (req, res) => {
 			text: `Team Name: ${team}\n Members: ${contestantName}, ${teammate}`
 		};
 
-		transporter.sendMail(message);
+		// transporter.sendMail(message);
 		res.json({
 			code: 200,
 			msg: 'You have been registered for Beer Pong!',
