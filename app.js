@@ -149,7 +149,7 @@ function handleResponseJSON(data) {
 		});
 	}
 
-	if (data.team) {
+	if (data.teamName) {
 		return emailjs.send('service_eao5009', 'template_d44m8x9', {
 			first_person: data.firstPerson,
 			teammate: data.teammate,
