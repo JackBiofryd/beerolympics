@@ -133,6 +133,7 @@ async function postData(url, data) {
 
 function handleResponseJSON(data) {
 	if (!data.success) return sendErrorMessage(data.msg);
+	emailjs.init('GzDSORSpj0Jaq0yJj');
 
 	document.querySelector('.btn-blwhite').textContent = 'Registered!';
 	setTimeout(() => {
@@ -141,6 +142,20 @@ function handleResponseJSON(data) {
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
 	document.querySelector('.beer-pong-register').style.display = 'none';
+
+	if (data.name) {
+		return emailjs.send('service_eao5009', 'template_b0j2yde', {
+			name: data.name
+		});
+	}
+
+	if (data.team) {
+		return emailjs.send('service_eao5009', 'template_d44m8x9', {
+			first_person: data.firstPerson,
+			teammate: data.teammate,
+			team: data.teamName
+		});
+	}
 }
 
 function initTagCloud() {
