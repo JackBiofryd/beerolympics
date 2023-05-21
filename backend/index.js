@@ -82,16 +82,10 @@ app.post('/', async (req, res) => {
 			});
 		}
 
-		const message = {
-			from: 'beerolympwebsite@gmail.com',
-			to: 'beerolympicss@gmail.com',
-			subject: 'Fastest Chug New Register',
-			text: `Name: ${contestantName}`
-		};
-
 		return res.json({
 			code: 200,
 			msg: `${contestantName} has been registered for Fastest Chug!`,
+			name: contestantName,
 			success: true
 		});
 	}
@@ -176,6 +170,9 @@ app.post('/', async (req, res) => {
 		res.json({
 			code: 200,
 			msg: 'You have been registered for Beer Pong!',
+			teamName: team,
+			firstPerson: contestantName,
+			teammate: teammate,
 			success: true
 		});
 	}
