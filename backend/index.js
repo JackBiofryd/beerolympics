@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const nodemailer = require('nodemailer');
 const Contestant = require('./schemas/contestantSchema');
 const Team = require('./schemas/teamSchema');
 
@@ -20,15 +19,6 @@ mongoose.connect(
 	() => console.log('connected'),
 	e => console.log(e)
 );
-
-// Nodemailer
-// const transporter = nodemailer.createTransport({
-// 	service: 'gmail',
-// 	auth: {
-// 		user: 'beerolympwebsite@gmail.com',
-// 		pass: 'pnulxadatcvhvhpd'
-// 	}
-// });
 
 const maxChugContestants = 10;
 const maxPongTeams = 32;
@@ -98,8 +88,6 @@ app.post('/', async (req, res) => {
 			subject: 'Fastest Chug New Register',
 			text: `Name: ${contestantName}`
 		};
-
-		// transporter.sendMail(message);
 
 		return res.json({
 			code: 200,
@@ -185,7 +173,6 @@ app.post('/', async (req, res) => {
 			text: `Team Name: ${team}\n Members: ${contestantName}, ${teammate}`
 		};
 
-		// transporter.sendMail(message);
 		res.json({
 			code: 200,
 			msg: 'You have been registered for Beer Pong!',

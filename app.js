@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:5000/';
+const BACKEND_URL = 'https://beerdatabase.herokuapp.com/';
 const modals = document.querySelectorAll('.modal');
 modals.forEach(modal => modal.addEventListener('click', hideModal));
 window.addEventListener('scroll', toggleFixedNavbar);
