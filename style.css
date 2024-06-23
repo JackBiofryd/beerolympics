@@ -139,6 +139,10 @@ svg {
 	opacity: 0.6;
 }
 
+.bold {
+	font-weight: 500;
+}
+
 /* Special Styling */
 .navbar-wrapper {
 	width: 100%;
@@ -543,7 +547,7 @@ textarea.input-field {
 }
 
 #pongModal .modal-illustration {
-	background: url('./media/beerPongModal.jpg') no-repeat center center/cover;
+	background: url('./media/beerPongModal.jpg') repeat center center/cover;
 }
 
 #chugModal .modal-illustration {
@@ -832,4 +836,110 @@ footer a {
         width: auto;
         padding: 1rem;
     }
+}
+
+/* HALL OF FAME STYLING */
+body.hall-of-fame {
+	background: #fee283;
+	margin-top: 8.5rem;
+}
+
+.fame-container {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 5rem;
+	line-height: 1.5;
+}
+.fame-container h2 {
+	font-size: 4rem;
+	font-weight: 500;
+	margin-bottom: 2rem;
+}
+
+.place-container {
+	width: 100%;
+	display: flex;
+	padding: 2rem;
+	justify-content: center;
+}
+
+.polaroid-container {
+	background: #fafafa;
+	padding: 1rem;
+	padding-bottom: 3rem;
+	margin: .5rem;
+	height: fit-content;
+	position: relative;
+
+	box-shadow: rgba(100, 100, 111, 0.1) 0px 3px 20px 0px;
+}
+
+.polaroid-container img {
+	width: 250px;
+	padding-bottom: 1rem;
+}
+
+.fame-container .second-level {
+	margin-top: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.polaroid-container .mvp {
+	position: absolute;
+	top: -3rem;
+	left: -3rem;
+	transform: rotate(-15deg);
+}
+
+.mvp img {
+	width: 150px;
+}
+
+.polaroid-container.FF2023 {
+	transform: rotate(-7deg);
+}
+.polaroid-container.SF2023 {
+	transform: rotate(4deg);
+}
+.polaroid-container.FS2023 {
+	transform: rotate(5deg);
+	margin-top: 2rem;
+}
+.polaroid-container.SS2023 {
+	transform: rotate(-3deg);
+	margin-left: -1rem;
+}
+.polaroid-container.FT2023 {
+	transform: rotate(-2deg);
+	margin-top: -1rem;
+}
+.polaroid-container.ST2023 {
+	transform: rotate(3deg);
+	margin-left: -1rem;
+}
+.polaroid-container.FF2022 {
+	transform: rotate(10deg);
+}
+.polaroid-container.SF2022 {
+	transform: rotate(-5deg);
+	margin-top: -.5rem;
+	margin-left: -1rem;
+}
+.polaroid-container.FS2022 {
+	transform: rotate(3deg);
+	margin-top: -3.5rem;
+}
+.polaroid-container.SS2022 {
+	transform: rotate(-3deg);
+	margin-left: -3rem;
+}
+.polaroid-container.FT2022 {
+	transform: rotate(-10deg);
+	margin-top: -2rem;
+}
+.polaroid-container.ST2022 {
+	transform: rotate(4deg);
+	margin-left: -1rem;
+	margin-top: -2rem;
 }
