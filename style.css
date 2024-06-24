@@ -950,3 +950,98 @@ body.hall-of-fame {
 	margin-left: -1rem;
 	margin-top: -2rem;
 }
+
+@media screen and (max-width: 1300px) {
+	.polaroid-container img {
+		width: 200px;
+	}
+	.mvp img {
+		width: 120px;
+	}
+	.polaroid-container .mvp {
+		top: -2rem;
+		left: -2rem;
+	}
+}
+@media screen and (max-width: 1075px) {
+	.second-level {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.hall-of-fame h1 {
+		font-size: 6rem;
+	}
+	.hall-of-fame h2 {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.polaroid-container img {
+		width: 180px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.polaroid-container img {
+		width: 150px;
+	}
+
+	.polaroid-container p {
+		font-size: .8rem;
+	}
+	
+	.polaroid-container .mvp img {
+		width: 100px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.hall-of-fame h1 {
+		font-size: 5rem;
+	}
+	.hall-of-fame h2 {
+		font-size: 2rem;
+	}
+
+	.place-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.polaroid-container {
+		width: fit-content;
+		margin-left: 0 !important;
+		margin-top: 0;
+	}
+
+	.polaroid-container.SF2023 {
+		margin-top: -2rem;
+	}
+	.polaroid-container.FS2023 {
+		margin-top: 0rem;
+	}
+	.polaroid-container.SS2023 {
+		margin-top: -2rem;
+	}
+	.polaroid-container.FT2023 {
+		margin-top: 2rem;
+	}
+	.polaroid-container.ST2023 {
+		margin-top: -2rem;
+	}
+	.polaroid-container.SF2022 {
+		margin-top: -1.5rem;
+	}
+	.polaroid-container.FS2022 {
+		margin-top: 2rem;
+	}
+	.polaroid-container.SS2022 {
+		margin-top: -2rem;
+	}
+	.polaroid-container.FT2022 {
+		margin-top: 2rem;
+	}
+}
