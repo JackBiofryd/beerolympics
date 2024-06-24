@@ -844,6 +844,13 @@ body.hall-of-fame {
 	margin-top: 8.5rem;
 }
 
+.hall-of-fame h1 {
+	font-size: 8rem;
+	text-align: center;	
+	margin-bottom: 3rem;
+	font-family: "Tangerine";
+}
+
 .fame-container {
 	width: 100%;
 	text-align: center;
@@ -851,7 +858,7 @@ body.hall-of-fame {
 	line-height: 1.5;
 }
 .fame-container h2 {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: 500;
 	margin-bottom: 2rem;
 }
