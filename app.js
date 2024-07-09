@@ -9,7 +9,6 @@ document
 	.addEventListener('submit', handleFormSubmit);
 window.addEventListener('DOMContentLoaded', () => {
 	initTagCloud();
-	getRegisterInfo();
 });
 
 function hideModal(e) {
