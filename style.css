@@ -42,6 +42,10 @@ svg {
 	width: 100%;
 }
 
+textarea {
+	font: var(--fonts); 
+}
+
 /* Utility Classes */
 .container {
 	max-width: var(--max-width);
