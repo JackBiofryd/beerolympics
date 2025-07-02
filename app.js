@@ -73,8 +73,8 @@ function handleFormSubmit(e) {
 function getFormData() {
 	const name = document.getElementById('name').value;
 
-	const isFastestChugChecked = document.getElementById('chugSelect').checked;
-	const isBeerPongChecked = document.getElementById('pongSelect').checked;
+	const isFastestChugChecked = false;
+	const isBeerPongChecked = true;
 
 	if (!name) return sendErrorMessage('Please input your name.');
 
