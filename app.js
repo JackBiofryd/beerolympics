@@ -148,7 +148,6 @@ function handleResponseJSON(data) {
 	}, 4000);
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
-	document.querySelector('.beer-pong-register').style.display = 'none';
 
 	if (data.name) {
 		return emailjs.send('service_fqw8lii', 'template_b0j2yde', {
