@@ -904,6 +904,31 @@ body.hall-of-fame {
 	width: 150px;
 }
 
+.polaroid-container.FF2024 {
+	transform: rotate(-4deg);
+	margin-right: -0.5rem;
+}
+.polaroid-container.SF2024 {
+	transform: rotate(2deg);
+	margin-top: 2rem;
+}
+.polaroid-container.FS2024 {
+	transform: rotate(-5deg);
+	margin-top: 2rem;
+}
+.polaroid-container.SS2024 {
+	transform: rotate(3deg);
+	margin-left: -1rem;
+}
+.polaroid-container.FT2024 {
+	transform: rotate(9deg);
+	margin-top: -1rem;
+	z-index: 999;
+}
+.polaroid-container.ST2024 {
+	transform: rotate(-5deg);
+	margin-left: -2rem;
+}
 .polaroid-container.FF2023 {
 	transform: rotate(-7deg);
 }
