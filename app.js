@@ -73,8 +73,8 @@ function handleFormSubmit(e) {
 function getFormData() {
 	const name = document.getElementById('name').value;
 
-	const isFastestChugChecked = document.getElementById('chugSelect').checked;
-	const isBeerPongChecked = document.getElementById('pongSelect').checked;
+	const isFastestChugChecked = false;
+	const isBeerPongChecked = true;
 
 	if (!name) return sendErrorMessage('Please input your name.');
 
@@ -148,7 +148,6 @@ function handleResponseJSON(data) {
 	}, 4000);
 	sendSuccessMessage(data.msg);
 	document.querySelector('.register-form').reset();
-	document.querySelector('.beer-pong-register').style.display = 'none';
 
 	if (data.name) {
 		return emailjs.send('service_fqw8lii', 'template_b0j2yde', {
